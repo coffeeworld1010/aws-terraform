@@ -1,18 +1,32 @@
+name: AWS Connection Test
+
+on:
+  push:
+    branches:
+      - main
+
 permissions:
   id-token: write
   contents: read
 
-steps:
-  - name: Checkout
-    uses: actions/checkout@v5
+jobs:
+  aws-test:
+    runs-on: ubuntu-latest
 
-  - name: Debug OIDC claims
-    uses: github/actions-oidc-debugger@main
-    with:
-      audience: sts.amazonaws.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  - name: Configure AWS credentials
-    uses: aws-actions/configure-aws-credentials@v6
-    with:
-      role-to-assume: arn:aws:iam::858444016636:role/github-actions-terraform
-      aws-region: ap-northeast-2
+      - name: Debug OIDC claims
+        uses: github/actions-oidc-debugger@main
+        with:
+          audience: sts.amazonaws.com
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::858444016636:role/github-actions-terraform
+          aws-region: ap-northeast-2
+
+      - name: Check AWS account
+        run: aws sts get-caller-identity
