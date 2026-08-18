@@ -1,3 +1,8 @@
+- name: Debug OIDC claims
+  uses: github/actions-oidc-debugger@main
+  with:
+    audience: sts.amazonaws.com
+
 permissions:
   id-token: write
   contents: read
