@@ -1,15 +1,10 @@
-- name: Debug OIDC claims
-  uses: github/actions-oidc-debugger@main
-  with:
-    audience: sts.amazonaws.com
-
 permissions:
   id-token: write
   contents: read
 
 steps:
   - name: Checkout
-    uses: actions/checkout@v4
+    uses: actions/checkout@v5
 
   - name: Debug OIDC claims
     uses: github/actions-oidc-debugger@main
