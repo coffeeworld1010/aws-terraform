@@ -6,6 +6,6 @@ variable "vpc_name" {
     type = string
 }
 
-vairiable "vpc_cidr" {
+variable "vpc_cidr" {
     type = string
 }
