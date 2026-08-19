@@ -1,13 +1,9 @@
-name: AWS Connection Test
+name: AWS OIDC Test
 
 on:
   push:
     branches:
       - main
-
-# 💡 핵심 해결책: OIDC 토큰 발급 시스템을 강제로 오리지널 글로벌 도메인으로 고정합니다.
-env:
-  ACTIONS_ID_TOKEN_REQUEST_URL: "https://githubusercontent.com"
 
 permissions:
   id-token: write
@@ -27,6 +23,5 @@ jobs:
           role-to-assume: arn:aws:iam::858444016636:role/github-actions-terraform
           aws-region: ap-northeast-2
 
-      - name: Check AWS account
+      - name: Check AWS Identity
         run: aws sts get-caller-identity
-
