@@ -23,7 +23,7 @@ resource "aws_vpc" "this" {
 }
 
 resource "aws_subnet" "this" {
-    for_earch = var.subnets
+    for_each = var.subnets
 
     vpc_id = aws_vpc.this.id
     cidr_block = each.value.cidr
