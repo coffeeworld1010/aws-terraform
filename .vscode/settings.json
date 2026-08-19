@@ -1,6 +1,5 @@
 {
     "github-actions.workflows.pinned.workflows": [
-        ".github/workflows/terraform.yml",
         ".github/workflows/aws-test.yml"
     ]
 }
