@@ -2,10 +2,7 @@ name: Terraform Destroy
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - main
-  
+
 permissions:
   id-token: write
   contents: read
@@ -16,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: environments/prod
+        working-directory: enviroments/prod
 
     steps:
       - name: Checkout
