@@ -5,7 +5,7 @@ output "subnet_ids" {
     }
 }
 
-output "name" {
+output "sub_name" {
     value = {
         for key, subnet in aws_subnet.this :
         key => subnet.tags["Name"]
