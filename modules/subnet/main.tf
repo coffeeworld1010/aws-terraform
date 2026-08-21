@@ -6,7 +6,7 @@ resource "aws_subnet" "this" {
     availability_zone = each.value.az
 
     tags = {
-        Name = each.value.name
+        Name = each.value.sub_name
         Enviroment = var.enviroments
         Tier = each.value.tier
         ManagedBy = "Terraform"
