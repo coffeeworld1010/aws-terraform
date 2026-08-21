@@ -39,9 +39,9 @@ module "route_table" {
     vpc_id = modules.vpc.vpc_id
     internet_gateway_id = modules.internet_gateway.id
 
-    public_subnet_ids = {
-        public-2a = modules.subnet.ids["public-2a"]
-        public-2b = modules.subnet.ids["public-2b"]
+    public_subnet_ids  = {
+        public-2a = module.subnet.ids["public-2a"]
+        public-2b = module.subnet.ids["public-2b"]
     }
 
     enviroments = var.enviroments
