@@ -2,7 +2,7 @@ resource "aws_subnet" "this" {
     for_each = var.subnets
     
     vpc_id = var.vpc_id
-    cird_block = each.value.sub_cidr
+    sub_cird = each.value.sub_cidr
     availability_zone = each.value.az
 
     tags = {
