@@ -8,7 +8,7 @@ variable "internet_gateway_id" {
     type = string
 }
 
-variable "public_route_table_ids" {
+variable "public_subnet_ids" {
     description = "Public Route Table IDs"
     type = map(string)
 }
