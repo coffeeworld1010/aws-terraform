@@ -10,7 +10,7 @@ variable "internet_gateway_id" {
 
 variable "public_route_table_ids" {
     description = "Public Route Table IDs"
-    type = list(string)
+    type = map(string)
 }
 
 variable "enviroments" {
