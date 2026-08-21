@@ -1,7 +1,7 @@
-variables "vpc_id" {
+variable "vpc_id" {
     type = string
 }
 
-variables "igw_name" {
+variable "igw_name" {
     type = string
 }
