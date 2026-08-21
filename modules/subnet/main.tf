@@ -5,7 +5,7 @@ resource "aws_subnet" "this" {
     sub_cird = each.value.sub_cird
     availability_zone = each.value.az
 
-    tags = {`
+    tags = {
         Name = each.value.sub_name
         Enviroment = var.enviroments
         Tier = each.value.tier
