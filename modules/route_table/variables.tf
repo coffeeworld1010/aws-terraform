@@ -8,9 +8,10 @@ variable "internet_gateway_id" {
     type = string
 }
 
-variable "public_route_table ids" {
+variable "public_route_table_ids" {
     description = "Public Route Table IDs"
     type = list(string)
+}
 
 variable "enviroments" {
     description = "Enviroments Name"
