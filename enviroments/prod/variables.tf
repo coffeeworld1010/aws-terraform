@@ -16,8 +16,8 @@ variable "vpc_cidr" {
 
 variable "subnets" {
     type = map (object({
-        name = string
-        cidr = string
+        sub_name = string
+        sub_cidr = string
         az = string
         tier = string
     }))
