@@ -5,3 +5,7 @@ variable "vpc_id" {
 variable "igw_name" {
     type = string
 }
+
+variable "enviroments" {
+    type = string
+}
