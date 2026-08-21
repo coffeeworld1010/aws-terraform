@@ -28,7 +28,7 @@ module "subnet" {
 module "internet_gateway" {
     source = "../../modules/internet_gateway"
 
-    vpc_id = modues.vpc.vpc_id
+    vpc_id = modules.vpc.vpc_id
     igw_name = "${var.vpc_name}-igw"
     enviroments = var.enviroments
 }
