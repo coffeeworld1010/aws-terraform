@@ -24,3 +24,25 @@ module "subnet" {
     subnets = var.subnets
     enviroments = var.enviroments
 }
+
+module "internet_gateway" {
+    source = "../../modules/internet_gateway"
+
+    vpc_id = modues.vpc.vpc_id
+    name = "${var.vpc_name}-igw"
+    enviroments = var.enviroments
+}
+
+module "route_table" {
+    source = "../../modules/route_table"
+
+    vpc_id = modules.vpc.vpc_id
+    internet_gateway_id = modules.internet_gateway.id
+
+    public_subnet_ids = {
+        public-2a = modules.subnet.ids["public-2a"]
+        public-2b = modules.subnet.ids["public-2b"]
+    }
+
+    enviroments = var.enviroments
+}
