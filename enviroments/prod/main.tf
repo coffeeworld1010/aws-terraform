@@ -29,7 +29,7 @@ module "internet_gateway" {
     source = "../../modules/internet_gateway"
 
     vpc_id = modues.vpc.vpc_id
-    name = "${var.vpc_name}-igw"
+    igw_name = "${var.vpc_name}-igw"
     enviroments = var.enviroments
 }
 
