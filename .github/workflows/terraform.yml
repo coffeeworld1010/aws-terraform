@@ -37,8 +37,13 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        run: terraform plan
+        run: |
+          terraform plan \
+            -var-file="vars/common.tfvars" \
+            -var-file="vars/network.tfvars"
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
-
+        run: |
+          terraform apply -auto-approve \
+            -var-file="vars/common.tfvars" \
+            -var-file="vars/network.tfvars"
