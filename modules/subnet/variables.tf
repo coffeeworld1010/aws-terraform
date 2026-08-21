@@ -5,7 +5,7 @@ variable "vpc_id" {
 
 variable "subnets" {
     description = "Subnets"
-    stype = map(object({
+    type = map(object({
         name = string
         sub_cidr = string
         az = string
